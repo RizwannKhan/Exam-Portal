@@ -14,38 +14,37 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 @Entity
 @Table(name = "users")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String username;
-	
+
 	private String password;
-	
+
 	private String firstName;
-	
+
 	private String lastName;
-	
+
 	private String email;
-	
+
 	private String phone;
-	
+
 	private String profile;
-	
+
 	private boolean enabled = true;
-	
-	//user can have many roles
+
+	// user can have many roles
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
 	@JsonIgnore
 	private Set<UserRole> userRoles = new HashSet<>();
-	
+
 	public User() {
-		
+
 	}
 
 	public User(Long id, String username, String password, String firstName, String lastName, String email,
@@ -140,7 +139,6 @@ public class User {
 
 	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
-	}	
-	
-	
+	}
+
 }
