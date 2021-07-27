@@ -52,7 +52,7 @@ export class SignupComponent implements OnInit {
         //error
         console.log(error);
         //alert('something went wrong');
-        this._snack.open('Something went wrong', '', {
+        this._snack.open('User is already exists', '', {
           duration:2500,
           verticalPosition: 'top',
           horizontalPosition: 'right'
