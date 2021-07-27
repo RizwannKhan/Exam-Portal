@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row ml20">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class="container text-center">
+                        <img src="../../../assets/images/logo.png" style="border-radius: 50px;" width="150" height="150"
+                            alt="Logo">
+                    </div>
+
+                    <h1 class="text-center">Login Here !!</h1>
+
+                    <!-- {{ loginData | json}} -->
+                    <form (ngSubmit)="formSubmit()">
+                        <!-- Username field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input 
+                            [(ngModel)]="loginData.username"
+                            required name="username" matInput placeholder="Enter username">
+                            <mat-hint>Valid Username !!!</mat-hint>
+                        </mat-form-field>
+
+                        <!-- Username field -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input
+                            [(ngModel)]="loginData.password"
+                            type="password" required name="password" matInput placeholder="Enter password">
+                            <mat-hint>Valid Password !!!</mat-hint>
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary" type="submit">Login</button>
+                            <button mat-raised-button class="ml20" color="accent">Reset</button>
+                        </div>
+
+                    </form>
+                </mat-card>
+
+            </div>
+        </div>
+    </div>
+</div>
