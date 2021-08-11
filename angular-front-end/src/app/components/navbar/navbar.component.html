@@ -12,12 +12,10 @@
         aria-label="Example icon-button with share icon">
         Register
     </a>
-    <a *ngIf="isLoggedIn && user" mat-icon-button class="example-icon ml20"
-        aria-label="Example icon-button with share icon">
+    <a *ngIf="isLoggedIn && user" routerLink="/admin/profile" mat-icon-button class="ml20 mr20">
         {{ user.username }}
     </a>
-    <a (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="example-icon ml20"
-        aria-label="Example icon-button with share icon">
+    <a (click)="logout()" *ngIf="isLoggedIn" mat-icon-button class="ml20">
         Logout
     </a>
 </mat-toolbar>
