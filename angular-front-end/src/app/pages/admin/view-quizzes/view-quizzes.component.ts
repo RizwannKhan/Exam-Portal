@@ -15,7 +15,7 @@ export class ViewQuizzesComponent implements OnInit {
 
   ngOnInit(): void {
     this._quiz.quizzes().subscribe(
-      (data) => {
+      (data: any) => {
         this.quizzes = data;
         console.log(this.quizzes);
       },

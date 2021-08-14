@@ -13,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,6 +34,8 @@ import { AddCategoryComponent } from './pages/admin/add-category/add-category.co
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 
 
 
@@ -53,7 +56,9 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
     AddCategoryComponent,
     ViewQuizzesComponent,
     AddQuizComponent,
-    UpdateQuizComponent
+    UpdateQuizComponent,
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +78,7 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
     MatSlideToggleModule,
     MatSelectModule,
     ReactiveFormsModule,
+    CKEditorModule,
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
