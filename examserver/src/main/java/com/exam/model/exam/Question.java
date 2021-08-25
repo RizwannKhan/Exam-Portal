@@ -7,36 +7,43 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Question {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long quesId;
-	
+
 	@Column(length = 5000)
 	private String content;
-	
+
 	private String image;
-	
+
 	private String option1;
-	
+
 	private String option2;
-	
+
 	private String option3;
-	
+
 	private String option4;
 
 	private String answer;
-	
+
+	@Transient
+	private String givenAnswer;
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Quiz quiz;
-	
+
 	public Question() {
-		
+
 	}
-	
+
 	public Question(String content, String image, String option1, String option2, String option3, String option4,
 			String answer, Quiz quiz) {
 		super();
@@ -49,7 +56,6 @@ public class Question {
 		this.answer = answer;
 		this.quiz = quiz;
 	}
-
 
 	public Long getQuesId() {
 		return quesId;
@@ -122,5 +128,13 @@ public class Question {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
-	
+
+	public String getGivenAnswer() {
+		return givenAnswer;
+	}
+
+	public void setGivenAnswer(String givenAnswer) {
+		this.givenAnswer = givenAnswer;
+	}
+
 }
