@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   formSubmit() {
-    console.log("login form submitted");
+    //console.log("login form submitted");
 
     if (this.loginData.username.trim() == '' || this.loginData.username == null) {
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.login.generateToken(this.loginData).subscribe(
       (data: any) => {
         console.log("success");
-        console.log(data);
+        //console.log(data);
 
         //login...
         this.login.loginUser(data.token);
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         this.login.getCurrentUser().subscribe(
           (user) => {
             this.login.setUser(user);
-            console.log(user);
+            //console.log(user);
             //redirect: Admin - admin-dashboard
             //redirect: Normal - normal-dashboard
             if (this.login.getUserRole() == 'ADMIN') {
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
             else if (this.login.getUserRole() == 'NORMAL') {
               //user-dashboard
               //window.location.href='/user-dashboard'
-              this.router.navigate(['user-dashboard']);
+              this.router.navigate(['user-dashboard/0']);
               this.login.loginStatusSubject.next(true);
             }
             else {
